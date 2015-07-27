@@ -4,7 +4,6 @@ export default ngModule => {
       if (!filterName) {
         return input;
       }
-      // filterName can contain its arguments for convenience
       const args = Array.prototype.slice.call(arguments, 0);
       args.splice(1, 1); // remove filter name
       const filter = $filter(filterName);
