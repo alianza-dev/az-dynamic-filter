@@ -1,6 +1,6 @@
 {
   "name": "az-dynamic-filter",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Angular module to have a dynamic filter",
   "main": "dist/az-dynamic-filter.js",
   "peerDependencies": {
@@ -55,6 +55,7 @@
     "report-coverage": "cat ./coverage/lcov.info | codecov",
     "start": "npm run test",
     "test": "NODE_ENV=test COVERAGE=true karma start",
+    "test:single": "npm run test -- --single",
     "test:debug": "NODE_ENV=test karma start --browsers Chrome",
     "tag:beta": "with-package npm dist-tag add pkg.name@pkg.version beta"
   },
@@ -72,6 +73,11 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/alianza-dev/az-dynamic-filter/issues"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run eslint && npm run test:single && npm run check-coverage"
+    }
   },
   "homepage": "https://github.com/alianza-dev/az-dynamic-filter#readme",
   "kcdCommon": {

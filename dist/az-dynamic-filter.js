@@ -1,4 +1,4 @@
-//! az-dynamic-filter version 1.0.0 built with ♥ by Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com) (ó ì_í)=óò=(ì_í ò)
+//! az-dynamic-filter version 2.0.0 built with ♥ by Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com) (ó ì_í)=óò=(ì_í ò)
 
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
@@ -116,6 +116,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
+
 	exports['default'] = function (ngModule) {
 	  ngModule.filter('azDynamicFilter', ["$filter", function ($filter) {
 	    return function azDynamicFilter(input, filterName) {
@@ -123,53 +125,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return input;
 	      }
 	      // filterName can contain its arguments for convenience
-	      var args = [];
-	      getFilterArgs(filterName, args);
-	      if (args.length === 1) {
-	        args = Array.prototype.slice.call(arguments, 0);
-	        args.splice(1, 1); // remove filter name
-	      } else {
-	        filterName = args[0];
-	        args.splice(0, 1, input); // remove the filter name
-	      }
+	      var args = Array.prototype.slice.call(arguments, 0);
+	      args.splice(1, 1); // remove filter name
 	      var filter = $filter(filterName);
-	      return filter.apply(null, args); // invoke filter with args received
-
-	      function getFilterArgs(_x, _x2) {
-	        var _again = true;
-
-	        _function: while (_again) {
-	          var str = _x,
-	              matches = _x2;
-	          startIndex = nextColon = endIndex = isQuoted = head = tail = undefined;
-	          _again = false;
-
-	          /* eslint complexity:[2, 7] */
-	          if (!str) {
-	            return matches;
-	          }
-	          var startIndex = 0;
-	          var nextColon = str.indexOf(':');
-	          var endIndex = str.length - (nextColon !== -1 ? 1 : 0);
-	          var isQuoted = str.indexOf('"') === 0;
-	          if (isQuoted) {
-	            startIndex = 1;
-	            endIndex = str.substr(1).indexOf('"') + 1;
-	          } else if (nextColon > 0) {
-	            endIndex = nextColon;
-	          }
-	          var head = str.substring(startIndex, endIndex).trim();
-	          matches.push(head);
-	          var tail = str.substring(head.length + (isQuoted ? 2 : 1));
-	          if (tail.indexOf(':') === 0) {
-	            tail = tail.substr(1);
-	          }
-	          _x = tail;
-	          _x2 = matches;
-	          _again = true;
-	          continue _function;
-	        }
-	      }
+	      return filter.apply(undefined, _toConsumableArray(args));
 	    };
 	  }]);
 	};
