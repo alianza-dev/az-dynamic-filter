@@ -47,7 +47,7 @@
     "build:dev": "NODE_ENV=development webpack --config node_modules/kcd-common-tools/shared/webpack.config.js --progress --colors",
     "build:prod": "NODE_ENV=production webpack --config node_modules/kcd-common-tools/shared/webpack.config.js --progress --colors",
     "build": "npm run build:dev & npm run build:prod",
-    "check-coverage": "./node_modules/istanbul/lib/cli.js check-coverage --statements 80 --functions 80 --lines 80 --branches 80",
+    "check-coverage": "./node_modules/istanbul/lib/cli.js check-coverage --statements 97 --functions 100 --lines 93 --branches 90",
     "ci": "npm run eslint && npm run test:single && npm run check-coverage && npm run build",
     "eslint": "eslint src/ -c node_modules/kcd-common-tools/shared/test.eslintrc",
     "release": "npm run build && with-package git commit -am pkg.version && with-package git tag pkg.version && git push && npm publish && git push --tags",
@@ -55,7 +55,7 @@
     "report-coverage": "cat ./coverage/lcov.info | codecov",
     "start": "npm run test",
     "test": "NODE_ENV=test COVERAGE=true karma start",
-    "test:single": "npm run test -- --single",
+    "test:single": "npm run test -- --single-run",
     "test:debug": "NODE_ENV=test karma start --browsers Chrome",
     "tag:beta": "with-package npm dist-tag add pkg.name@pkg.version beta"
   },

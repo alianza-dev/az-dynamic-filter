@@ -2,7 +2,7 @@
 set -e
 
 echo "-- Checking code --"
-time npm run code-checks
+time npm run eslint
 echo "-- Code is good --"
 
 echo "-- Running tests with coverage --"
