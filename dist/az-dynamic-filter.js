@@ -1,4 +1,4 @@
-//! az-dynamic-filter version 2.0.0 built with ♥ by Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com) (ó ì_í)=óò=(ì_í ò)
+//! az-dynamic-filter version 2.0.1 built with ♥ by Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com) (ó ì_í)=óò=(ì_í ò)
 
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
@@ -124,7 +124,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	      if (!filterName) {
 	        return input;
 	      }
-	      // filterName can contain its arguments for convenience
 	      var args = Array.prototype.slice.call(arguments, 0);
 	      args.splice(1, 1); // remove filter name
 	      var filter = $filter(filterName);

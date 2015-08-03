@@ -1,6 +1,6 @@
 {
   "name": "az-dynamic-filter",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Angular module to have a dynamic filter",
   "main": "dist/az-dynamic-filter.js",
   "peerDependencies": {

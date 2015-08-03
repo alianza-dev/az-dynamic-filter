@@ -6,12 +6,10 @@ Status:
 [![Build Status](https://snap-ci.com/alianza-dev/az-dynamic-filter/branch/master/build_image)](https://snap-ci.com/alianza-dev/az-dynamic-filter/branch/master)
 [![Code Coverage](https://img.shields.io/codecov/c/github/alianza-dev/az-dynamic-filter.svg?style=flat-square)](https://codecov.io/github/alianza-dev/az-dynamic-filter)
 
-az-dynamic-filter is an AngularJS module which has a directive to help customize and render JavaScript/JSON configured forms.
-The `formly-form` directive and the `formlyConfig` service are very powerful and bring unmatched maintainability to your
-application's forms.
+az-dynamic-filter allows you to bind the name of a filter in your template to swap them out or allow someone to pass it
+in as an option to a directive. The possibilities are endless!
 
-
-## Usage:
+Usage:
 
 Depend on the module
 

@@ -1,3 +1,9 @@
+# 2.0.1
+
+## Other
+
+- Fixed documentation.
+
 # 2.0.0
 
 ## Breaking Changes
